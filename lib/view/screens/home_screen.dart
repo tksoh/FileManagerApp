@@ -11,7 +11,7 @@ import '../../utils/const.dart';
 import '../widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage();
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -427,7 +427,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ],
-      title: const Text("File Manager", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+      title: const Text("File Manager",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () async {

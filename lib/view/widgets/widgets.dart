@@ -20,7 +20,7 @@ Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("${usedStorage} GB / $totalStorage GB",
+              Text("$usedStorage GB / $totalStorage GB",
                   style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.bold,
@@ -40,7 +40,6 @@ Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
             radius: 31.0,
             lineWidth: 5.0,
             percent: usedStorage / totalStorage,
-      
             progressColor: orange,
             backgroundColor: orage2,
           )
@@ -124,5 +123,3 @@ Widget subtitle(FileSystemEntity entity) {
     },
   );
 }
-
-
