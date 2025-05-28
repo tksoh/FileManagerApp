@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:file_manager/file_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -334,11 +335,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> getPermission() async {
-    if (await Permission.storage.request().isGranted &&
-        await Permission.accessMediaLocation.request().isGranted &&
-        await Permission.manageExternalStorage.request().isGranted) {
-      gotPermission = true;
-      setState(() {});
+    final androidDevice = await DeviceInfoPlugin().androidInfo;
+    if (androidDevice.version.sdkInt >= 30) {
+      if (await Permission.accessMediaLocation.request().isGranted &&
+          await Permission.manageExternalStorage.request().isGranted) {
+        setState(() {
+          gotPermission = true;
+        });
+      }
     } else {
       await Permission.storage.request().then((value) {
         if (value.isGranted) {
