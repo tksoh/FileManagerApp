@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
     return ControlBackButton(
       controller: myController.controller,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: appBar(context),
         body: FileManager(
           controller: myController.controller,
