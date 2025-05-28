@@ -152,7 +152,8 @@ class FilesController extends GetxController {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    primary: orage2,
+                    // primary: orage2,
+                    backgroundColor: orage2,
                   ),
                   onPressed: () async {
                     Directory documentsDir =
@@ -228,7 +229,8 @@ class FilesController extends GetxController {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    primary: orage2,
+                    // primary: orage2,
+                    backgroundColor: orage2,
                   ),
                   onPressed: () async {
                     if (folderName.text.isEmpty || folderName.text == "") {
@@ -280,7 +282,8 @@ class FilesController extends GetxController {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  primary: orage2,
+                  // primary: orage2,
+                  backgroundColor: orage2,
                 ),
                 onPressed: () {
                   Navigator.pop(context);
