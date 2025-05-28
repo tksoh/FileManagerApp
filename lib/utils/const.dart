@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-Color orage2 = const Color(0xFF0DD9E60);
-Color orange = const Color(0xFF0CF5E49);
-Color yellow = const Color(0xFF0E3C783);
-Color black = const Color(0xFF0321c28);
-Color white = const Color(0xFF0F5F5F5);
-
+Color orage2 = const Color(0xF0DD9E60);
+Color orange = const Color(0xF0CF5E49);
+Color yellow = const Color(0xF0E3C783);
+Color black = const Color(0xF0321c28);
+Color white = const Color(0xF0F5F5F5);
 
 List<String> supportedDocumentExtensions = [
   ".pdf",

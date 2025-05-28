@@ -212,12 +212,10 @@ class _HomePageState extends State<HomePage> {
                                             .then((value) {
                                           setState(() {});
                                         });
-                                        ;
                                       } else {
                                         await entity.delete().then((value) {
                                           setState(() {});
                                         });
-                                        ;
                                       }
 
                                       break;
@@ -369,8 +367,8 @@ class _HomePageState extends State<HomePage> {
                     isMoving = false;
                   });
                 },
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Text("Move here ",
                         style: TextStyle(fontWeight: FontWeight.w500)),
                     Icon(Icons.paste),

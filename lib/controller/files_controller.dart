@@ -156,6 +156,7 @@ class FilesController extends GetxController {
                     backgroundColor: orage2,
                   ),
                   onPressed: () async {
+                    // ignore: unused_local_variable
                     Directory documentsDir =
                         await getApplicationDocumentsDirectory();
 
@@ -180,7 +181,9 @@ class FilesController extends GetxController {
                         });
                       }
                     } catch (e) {
-                      alert(context, "somthing went wrong");
+                      if (context.mounted) {
+                        alert(context, "somthing went wrong");
+                      }
                     }
                   },
                   child: const Text(
@@ -246,7 +249,9 @@ class FilesController extends GetxController {
                             "${controller.getCurrentPath}/${folderName.text}";
                       });
                     } catch (e) {
-                      alert(context, "Folder already exists");
+                      if (context.mounted) {
+                        alert(context, "Folder already exists");
+                      }
                     }
                     update();
                   },
