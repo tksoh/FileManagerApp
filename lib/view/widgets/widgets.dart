@@ -39,7 +39,7 @@ Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
             animationDuration: 1200,
             radius: 31.0,
             lineWidth: 5.0,
-            percent: usedStorage / totalStorage,
+            percent: totalStorage > 0 ? usedStorage / totalStorage : 0.0,
             progressColor: orange,
             backgroundColor: orage2,
           )
