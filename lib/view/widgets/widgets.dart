@@ -8,7 +8,7 @@ import 'package:sizer/sizer.dart';
 import '../../utils/const.dart';
 
 Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
-      height: 13.h,
+      height: 8.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(26),
         border: Border.all(color: Colors.grey, width: 0.5),
@@ -22,12 +22,12 @@ Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
             children: [
               Text("$usedStorage GB / $totalStorage GB",
                   style: TextStyle(
-                    fontSize: 14.sp,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.bold,
                   )),
               Text("Used Storage",
                   style: TextStyle(
-                    fontSize: 12.sp,
+                    fontSize: 10.sp,
                     color: Colors.grey,
                     fontWeight: FontWeight.w400,
                   )),
@@ -37,7 +37,7 @@ Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
             animateFromLastPercent: true,
             animation: true,
             animationDuration: 1200,
-            radius: 31.0,
+            radius: 25.0,
             lineWidth: 5.0,
             percent: totalStorage > 0 ? usedStorage / totalStorage : 0.0,
             progressColor: orange,
