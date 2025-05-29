@@ -80,7 +80,6 @@ class _HomePageState extends State<HomePage> {
                                 decoration: InputDecoration(
                                   suffixIcon: const Icon(Icons.search),
                                   filled: true,
-                                  fillColor: Colors.grey[200],
                                   hintText: 'Search Files',
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(16.0),
