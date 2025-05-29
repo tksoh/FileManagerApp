@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Text("Recent Files",
                                     style: TextStyle(
-                                      fontSize: 14.sp,
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.w600,
                                     )),
                                 InkWell(
@@ -296,7 +296,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                               style: TextStyle(
                                 fontStyle: FontStyle.italic,
-                                fontSize: 14.sp,
+                                fontSize: 12.sp,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
