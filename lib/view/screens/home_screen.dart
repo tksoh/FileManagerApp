@@ -336,8 +336,9 @@ class _HomePageState extends State<HomePage> {
   Future<void> getPermission() async {
     final androidDevice = await DeviceInfoPlugin().androidInfo;
     if (androidDevice.version.sdkInt >= 30) {
-      if (await Permission.accessMediaLocation.request().isGranted &&
-          await Permission.manageExternalStorage.request().isGranted) {
+      final mediaAccess = await Permission.accessMediaLocation.request();
+      final storageAccess = await Permission.manageExternalStorage.request();
+      if (mediaAccess.isGranted && storageAccess.isGranted) {
         setState(() {
           gotPermission = true;
         });
