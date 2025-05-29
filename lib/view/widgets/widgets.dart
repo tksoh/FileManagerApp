@@ -48,7 +48,12 @@ Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
     );
 
 Widget fileTypeWidget(String type, String size, String iconPath, Color color) {
-  return Padding(
+  final textColor =
+      ThemeData.estimateBrightnessForColor(color) == Brightness.dark
+          ? Colors.white
+          : Colors.black;
+
+  final tile = Padding(
     padding: const EdgeInsets.symmetric(horizontal: 8.0),
     child: ClipRRect(
       borderRadius: BorderRadius.circular(26),
@@ -68,15 +73,14 @@ Widget fileTypeWidget(String type, String size, String iconPath, Color color) {
                 children: [
                   Text(type,
                       style: TextStyle(
-                        color: color == yellow ? Colors.black : Colors.white,
-                        fontSize: 14.sp,
+                        color: textColor,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                       )),
                   Text(size,
                       style: TextStyle(
-                        color: color == orange
-                            ? Colors.black.withValues(alpha: 0.5)
-                            : Colors.grey,
+                        color: textColor,
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w500,
                       )),
                 ],
@@ -96,6 +100,8 @@ Widget fileTypeWidget(String type, String size, String iconPath, Color color) {
       ),
     ),
   );
+
+  return FittedBox(child: tile);
 }
 
 Widget subtitle(FileSystemEntity entity) {
