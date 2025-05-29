@@ -47,11 +47,14 @@ Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
       ),
     );
 
+Color contrastColor(Color color) =>
+    switch (ThemeData.estimateBrightnessForColor(color)) {
+      Brightness.dark => Colors.white,
+      Brightness.light => Colors.black
+    };
+
 Widget fileTypeWidget(String type, String size, String iconPath, Color color) {
-  final textColor =
-      ThemeData.estimateBrightnessForColor(color) == Brightness.dark
-          ? Colors.white
-          : Colors.black;
+  final textColor = contrastColor(color);
 
   final tile = Padding(
     padding: const EdgeInsets.symmetric(horizontal: 8.0),
