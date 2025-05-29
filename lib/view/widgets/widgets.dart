@@ -6,6 +6,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../utils/const.dart';
+import '../../utils/theme.dart';
 
 Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
       height: 8.h,
@@ -47,14 +48,8 @@ Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
       ),
     );
 
-Color contrastColor(Color color) =>
-    switch (ThemeData.estimateBrightnessForColor(color)) {
-      Brightness.dark => Colors.white,
-      Brightness.light => Colors.black
-    };
-
 Widget fileTypeWidget(String type, String size, String iconPath, Color color) {
-  final textColor = contrastColor(color);
+  final textColor = AppTheme.contrastColor(color);
 
   final tile = Padding(
     padding: const EdgeInsets.symmetric(horizontal: 8.0),

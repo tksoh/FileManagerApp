@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
+import 'utils/theme.dart';
 import 'view/screens/home_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -20,7 +21,8 @@ class MyAppState extends State<MyApp> {
       builder: (context, orientation, deviceType) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.dark,
-        theme: ThemeData(useMaterial3: true),
+        theme: AppTheme.light,
+        darkTheme: AppTheme.dark,
         home: const HomePage(),
       ),
     );
