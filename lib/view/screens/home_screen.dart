@@ -26,11 +26,15 @@ class _HomePageState extends State<HomePage> {
   var fullScreen = false;
   var isSearching = false;
   late FileSystemEntity selectedFile;
+  bool showCurrentPath = false;
 
   @override
   void initState() {
     super.initState();
     getPermission();
+
+    // we can only access the controller data after the widget is built
+    WidgetsBinding.instance.addPostFrameCallback((_) => showCurrentPath = true);
   }
 
   @override
@@ -432,8 +436,23 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ],
-      title: const Text("File Manager",
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const Text("File Manager",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+          if (showCurrentPath)
+            ValueListenableBuilder(
+              valueListenable: myController.controller.getPathNotifier,
+              builder: (context, value, child) {
+                return Text(myController.controller.getCurrentPath,
+                    style:
+                        TextStyle(fontSize: 12, fontWeight: FontWeight.w500));
+              },
+            )
+        ],
+      ),
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () async {
