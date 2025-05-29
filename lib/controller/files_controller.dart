@@ -28,9 +28,9 @@ class FilesController extends GetxController {
   }
 
   Future<void> _getSpace() async {
-    deviceAvailableSize = await StorageInfo().getStorageFreeSpace(SpaceUnit.GB);
     deviceTotalSize =
         await StorageInfo().getStorageTotalSpace(SpaceUnit.GB) + 10;
+    deviceAvailableSize = await StorageInfo().getStorageFreeSpace(SpaceUnit.GB);
     update();
   }
 
