@@ -178,7 +178,9 @@ class FilesController extends GetxController {
                         }
 
                         await raf.close().then((value) {
-                          Navigator.pop(context);
+                          if (context.mounted) {
+                            Navigator.pop(context);
+                          }
                         });
                       }
                     } catch (e) {
@@ -245,7 +247,9 @@ class FilesController extends GetxController {
                       await FileManager.createFolder(
                               controller.getCurrentPath, folderName.text)
                           .then((value) {
-                        Navigator.pop(context);
+                        if (context.mounted) {
+                          Navigator.pop(context);
+                        }
                         controller.setCurrentPath =
                             "${controller.getCurrentPath}/${folderName.text}";
                       });

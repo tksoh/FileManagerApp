@@ -247,7 +247,9 @@ class _HomePageState extends State<HomePage> {
                                                     "${myController.controller.getCurrentPath}/${renameController.text.trim()}",
                                                   )
                                                       .then((value) {
-                                                    Navigator.pop(context);
+                                                    if (context.mounted) {
+                                                      Navigator.pop(context);
+                                                    }
                                                     setState(() {});
                                                   });
                                                 },

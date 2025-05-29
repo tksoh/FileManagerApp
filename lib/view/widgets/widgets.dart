@@ -58,7 +58,7 @@ Widget fileTypeWidget(String type, String size, String iconPath, Color color) {
             height: 20.h,
             width: 40.w,
             decoration: BoxDecoration(
-              color: color == orange ? orange.withOpacity(0.8) : color,
+              color: color == orange ? orange.withValues(alpha: 0.8) : color,
               borderRadius: BorderRadius.circular(26),
             ),
             child: Padding(
@@ -75,7 +75,7 @@ Widget fileTypeWidget(String type, String size, String iconPath, Color color) {
                   Text(size,
                       style: TextStyle(
                         color: color == orange
-                            ? Colors.black.withOpacity(0.5)
+                            ? Colors.black.withValues(alpha: 0.5)
                             : Colors.grey,
                         fontWeight: FontWeight.w500,
                       )),
